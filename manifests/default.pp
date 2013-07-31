@@ -12,7 +12,7 @@ package { "maven":
         require => Package["openjdk-7-jdk"],
 }
 
-#package { "glassfish-appserv":
-#        ensure => installed,
-#        require => Package["mysql-server"],
-#}
+package { "git":
+        ensure => installed,
+        require => Package["maven"],
+}

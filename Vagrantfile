@@ -6,6 +6,7 @@ Vagrant::Config.run do |config|
 	config.vm.provision "shell", path:"jenkins.sh"
 #	config.vm.provision "shell", path:"jenkins2.sh"
 	config.vm.provision "shell", path:"apache.sh"
+	config.vm.provision "shell", path:"git.sh"
 	config.vm.provision :puppet do |puppet|
    		puppet.manifests_path = "manifests"
 		puppet.manifest_file = "mysql-server.pp"

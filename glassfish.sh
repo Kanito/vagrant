@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
 echo "Installing Glassfish..."
 mkdir ~/glassfish
 cd ~/glassfish

@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo "Creating Jenkins jobs etc..."
 mkdir /home/vagrant/jenkinscli
 cd /home/vagrant/jenkinscli

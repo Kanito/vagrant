@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<maven2-moduleset plugin="maven-plugin@1.524">
+<maven2-moduleset plugin="maven-plugin@1.525">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -18,7 +18,7 @@
     <groupId>se.hiq.hicollege</groupId>
     <artifactId>pipeline-database</artifactId>
   </rootModule>
-  <rootPOM>pipeline/pipeline-database/pom.xml</rootPOM>
+  <rootPOM>pipeline-database/pom.xml</rootPOM>
   <goals>liquibase:update</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>

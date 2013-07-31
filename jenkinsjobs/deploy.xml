@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<maven2-moduleset plugin="maven-plugin@1.524">
+<maven2-moduleset plugin="maven-plugin@1.525">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -18,7 +18,6 @@
     <groupId>se.hiq.hicollege</groupId>
     <artifactId>pipeline-base</artifactId>
   </rootModule>
-  <rootPOM>pipeline/pom.xml</rootPOM>
   <goals>-DskipTests=true clean install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
@@ -34,14 +33,6 @@
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>func-test</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.9">
       <adapter class="hudson.plugins.deploy.glassfish.GlassFish3xAdapter">
         <userName>admin</userName>
@@ -53,6 +44,14 @@
       <war>pipeline\pipeline-web\target\*.war</war>
       <onFailure>false</onFailure>
     </hudson.plugins.deploy.DeployPublisher>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>func-test</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
   <prebuilders/>

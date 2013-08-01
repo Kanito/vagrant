@@ -11,6 +11,7 @@ sudo su jenkins -c "cp /vagrant/jenkinsplugins/*.hpi /var/lib/jenkins/plugins/"
 
 # setup jenkins configuration
 sudo su jenkins -c "cp /vagrant/jenkinsjobs/config.xml /var/lib/jenkins/"
+sudo su jenkins -c "cp /vagrant/jenkinsjobs/hudson.tasks.Maven.xml /var/lib/jenkins/"
 
 # restart jenkins
 sudo su jenkins -c "java -jar jenkins-cli.jar -s http://localhost:8080 restart"

@@ -4,7 +4,6 @@ Vagrant::Config.run do |config|
 	config.vm.forward_port 80, 8080
 	config.vm.provision "puppet"
 	config.vm.provision "shell", path:"jenkins.sh"
-#	config.vm.provision "shell", path:"jenkins2.sh"
 	config.vm.provision "shell", path:"apache.sh"
 	config.vm.provision "shell", path:"git.sh"
 	config.vm.provision :puppet do |puppet|
@@ -12,4 +11,5 @@ Vagrant::Config.run do |config|
 		puppet.manifest_file = "mysql-server.pp"
 	end
 	config.vm.provision "shell", path:"glassfish.sh"
+	config.vm.provision "shell", path:"jenkins2.sh"
 end

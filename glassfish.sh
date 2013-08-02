@@ -5,7 +5,7 @@ mkdir /home/vagrant/glassfish
 cd /home/vagrant/glassfish
 wget http://download.java.net/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip
 unzip glassfish-3.1.2.2.zip
-cp /vagrant/domain.xml ~/glassfish/glassfish3/glassfish/domains/domain1/config/
+cp /vagrant/domain.xml /home/vagrant/glassfish/glassfish3/glassfish/domains/domain1/config/
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 /home/vagrant/glassfish/glassfish3/bin/asadmin start-domain
 /home/vagrant/glassfish/glassfish3/glassfish/bin/asadmin set "server.java-config.java-home=/usr/lib/jvm/java-7-openjdk-amd64"

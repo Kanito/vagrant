@@ -11,5 +11,6 @@ Vagrant::Config.run do |config|
 		puppet.manifest_file = "mysql-server.pp"
 	end
 	config.vm.provision "shell", path:"glassfish.sh"
+	config.vm.provision "shell", path:"selenium.sh"
 	config.vm.provision "shell", path:"jenkins2.sh"
 end

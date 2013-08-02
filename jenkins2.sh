@@ -35,6 +35,7 @@ sudo su jenkins -c "cp /vagrant/jenkinsjobs/config.xml /var/lib/jenkins/"
 sudo su jenkins -c "cp /vagrant/jenkinsjobs/hudson.tasks.Maven.xml /var/lib/jenkins/"
 
 # restart jenkins
+echo "Restarting Jenkins and waits until it gets up..."
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url restart"
 sleep 30
 jenkins_check
@@ -47,3 +48,6 @@ sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job database-test <
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job deploy < /vagrant/jenkinsjobs/deploy.xml"
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job func-test < /vagrant/jenkinsjobs/func-test.xml"
 
+# start compile-job
+echo "Starting compile job..."
+sudo su jenkins -c "java -jar jenkins-cli.jar -s $url build compile"

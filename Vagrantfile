@@ -1,6 +1,10 @@
 Vagrant::Config.run do |config|
 	config.vm.box = "precise64"
 	config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+	Vagrant::Config.run do |config|
+		config.vm.customize ["modifyvm", :id, "--memory", 1024]
+	end
+	#config.vm.boot_mode = :gui
 	config.vm.forward_port 80, 8080
 	config.vm.provision "puppet"
 	config.vm.provision "shell", path:"jenkins.sh"

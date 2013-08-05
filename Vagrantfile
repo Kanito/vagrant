@@ -1,20 +1,26 @@
-Vagrant::Config.run do |config|
+Vagrant.configure("2") do |config|
 	config.vm.box = "precise64"
 	config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-	Vagrant::Config.run do |config|
-		config.vm.customize ["modifyvm", :id, "--memory", 1024]
+	config.vm.provider "virtualbox" do |v|
+		#v.gui = true
+		v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+		v.customize ["modifyvm", :id, "--memory", "1024"]
 	end
-	#config.vm.boot_mode = :gui
-	config.vm.forward_port 80, 8080
-	config.vm.provision "puppet"
-	config.vm.provision "shell", path:"jenkins.sh"
-	config.vm.provision "shell", path:"apache.sh"
-	config.vm.provision "shell", path:"git.sh"
+	config.vm.network :forwarded_port, guest: 80, host: 8080
 	config.vm.provision :puppet do |puppet|
-   		puppet.manifests_path = "manifests"
+		puppet.options = "--verbose --debug"
+		puppet.manifests_path = "manifests"
+		puppet.manifest_file = "default.pp"
+	end
+	config.vm.provision :shell, :path => "jenkins.sh"
+	config.vm.provision :shell, :path => "apache.sh"	
+	config.vm.provision :shell, :path => "git.sh"
+	config.vm.provision :puppet do |puppet|
+		puppet.options = "--verbose --debug"
+		puppet.manifests_path = "manifests"
 		puppet.manifest_file = "mysql-server.pp"
 	end
-	config.vm.provision "shell", path:"glassfish.sh"
-	config.vm.provision "shell", path:"selenium.sh"
-	config.vm.provision "shell", path:"jenkins2.sh"
+	config.vm.provision :shell, :path => "glassfish.sh"
+	config.vm.provision :shell, :path => "selenium.sh"
+	config.vm.provision :shell, :path => "jenkins2.sh"
 end

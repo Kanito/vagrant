@@ -41,7 +41,7 @@
         <hostname></hostname>
       </adapter>
       <contextPath></contextPath>
-      <war>pipeline\pipeline-web\target\*.war</war>
+      <war>pipeline-web\target\*.war</war>
       <onFailure>false</onFailure>
     </hudson.plugins.deploy.DeployPublisher>
     <hudson.tasks.BuildTrigger>

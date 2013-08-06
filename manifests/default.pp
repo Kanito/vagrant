@@ -3,16 +3,16 @@ exec { "apt-get update":
 }
 
 package { "openjdk-7-jdk":
-	ensure => installed,
+	ensure => installed, #7u25-2.3.10-1ubuntu0.12.04.2
 	require => Exec["apt-get update"],
 }
 
 package { "maven":
-        ensure => installed,
+        ensure => "3.0.4-2",
         require => Package["openjdk-7-jdk"],
 }
 
 package { "git":
-        ensure => installed,
+        ensure => "1:1.7.9.5-1",
         require => Package["maven"],
 }

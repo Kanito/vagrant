@@ -8,8 +8,7 @@ Vagrant.configure("2") do |config|
 	end
 	config.vm.network :forwarded_port, guest: 80, host: 8080
 	config.vm.network :forwarded_port, guest: 4444, host: 4444
-	config.vm.network :forwarded_port, guest: 8181, host: 8181
-	
+	config.vm.network :forwarded_port, guest: 8181, host: 8181	
 	config.vm.provision :puppet do |puppet|
 		puppet.options = "--verbose --debug"
 		puppet.manifests_path = "manifests"

@@ -1,4 +1,4 @@
-package { "mysql-server": ensure => installed }
+package { "mysql-server": ensure => "5.5.32-0ubuntu0.12.04.1" }
 
 exec { "Set MySQL server root password":
 	require => Package["mysql-server"],

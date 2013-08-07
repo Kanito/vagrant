@@ -18,7 +18,7 @@
     <groupId>se.hiq.hicollege</groupId>
     <artifactId>pipeline-base</artifactId>
   </rootModule>
-  <goals>-DskipTests=true integration-test</goals>
+  <goals>integration-test</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <perModuleEmail>true</perModuleEmail>

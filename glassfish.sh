@@ -10,9 +10,8 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 /home/vagrant/glassfish/glassfish3/bin/asadmin start-domain
 /home/vagrant/glassfish/glassfish3/glassfish/bin/asadmin set "server.java-config.java-home=/usr/lib/jvm/java-7-openjdk-amd64"
 /home/vagrant/glassfish/glassfish3/glassfish/bin/asadmin create-service domain1
-/etc/init.d/GlassFish_domain1 stop
 cp /vagrant/mysql-connector-java-5.0.8-bin.jar /home/vagrant/glassfish/glassfish3/glassfish/domains/domain1/lib/ext/
-/etc/init.d/GlassFish_domain1 start
+/etc/init.d/GlassFish_domain1 restart
 
 #/home/vagrant/glassfish/glassfish3/bin/asadmin stop-domain
 #cp /vagrant/mysql-connector-java-5.0.8-bin.jar /home/vagrant/glassfish/glassfish3/glassfish/domains/domain1/lib/ext/

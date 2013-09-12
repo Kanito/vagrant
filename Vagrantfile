@@ -23,5 +23,6 @@ Vagrant.configure("2") do |config|
 		puppet.manifest_file = "mysql-server.pp"
 	end
 	config.vm.provision :shell, :path => "glassfish.sh"
-	config.vm.provision :shell, :path => "jenkins2.sh"
+	config.vm.provision :shell, :path => "jenkinsconfig.sh"
+	config.vm.provision :shell, :path => "dplab.sh"
 end

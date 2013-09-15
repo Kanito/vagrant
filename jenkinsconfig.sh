@@ -44,7 +44,7 @@ sudo su jenkins -c "cp /home/vagrant/jenkinsplugins/*.hpi /var/lib/jenkins/plugi
 
 # setup jenkins configuration
 cd /home/vagrant/jenkinscli
-sudo su jenkins -c "cp /vagrant/jenkinsjobs/config.xml /var/lib/jenkins/"
+sudo su jenkins -c "cp /vagrant/jenkinsjobs/config_nodp.xml /var/lib/jenkins/"
 sudo su jenkins -c "cp /vagrant/jenkinsjobs/hudson.tasks.Maven.xml /var/lib/jenkins/"
 
 # restart jenkins

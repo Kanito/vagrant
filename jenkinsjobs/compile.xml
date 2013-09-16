@@ -51,7 +51,7 @@
     <groupId>se.hiq.hicollege</groupId>
     <artifactId>pipeline-base</artifactId>
   </rootModule>
-  <goals>clean test-compile</goals>
+  <goals>-DskipTests=true clean install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <perModuleEmail>true</perModuleEmail>

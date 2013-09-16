@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<maven2-moduleset plugin="maven-plugin@1.525">
+<project>
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -14,24 +14,7 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <rootModule>
-    <groupId>se.hiq.hicollege</groupId>
-    <artifactId>pipeline-base</artifactId>
-  </rootModule>
-  <goals>-DskipTests=true clean install</goals>
-  <aggregatorStyleBuild>true</aggregatorStyleBuild>
-  <incrementalBuild>false</incrementalBuild>
-  <perModuleEmail>true</perModuleEmail>
-  <ignoreUpstremChanges>true</ignoreUpstremChanges>
-  <archivingDisabled>false</archivingDisabled>
-  <resolveDependencies>false</resolveDependencies>
-  <processPlugins>false</processPlugins>
-  <mavenValidationLevel>-1</mavenValidationLevel>
-  <runHeadless>false</runHeadless>
-  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
-  <settings class="jenkins.mvn.DefaultSettingsProvider"/>
-  <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
-  <reporters/>
+  <builders/>
   <publishers>
     <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.9">
       <adapter class="hudson.plugins.deploy.glassfish.GlassFish3xAdapter">
@@ -41,7 +24,7 @@
         <hostname></hostname>
       </adapter>
       <contextPath></contextPath>
-      <war>pipeline-web\target\*.war</war>
+      <war>pipeline-web/target/*.war</war>
       <onFailure>false</onFailure>
     </hudson.plugins.deploy.DeployPublisher>
     <hudson.tasks.BuildTrigger>
@@ -54,11 +37,4 @@
     </hudson.tasks.BuildTrigger>
   </publishers>
   <buildWrappers/>
-  <prebuilders/>
-  <postbuilders/>
-  <runPostStepsIfResult>
-    <name>FAILURE</name>
-    <ordinal>2</ordinal>
-    <color>RED</color>
-  </runPostStepsIfResult>
-</maven2-moduleset>
+</project>

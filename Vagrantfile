@@ -24,5 +24,5 @@ Vagrant.configure("2") do |config|
 	end
 	config.vm.provision :shell, :path => "glassfish.sh"
 	config.vm.provision :shell, :path => "jenkinsconfig.sh"
-	config.vm.provision :shell, :path => "dplab.sh"
+#	config.vm.provision :shell, :path => "dplab.sh"
 end

@@ -35,6 +35,7 @@ sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job int-test < /vag
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job database-test < /vagrant/jenkinsjobs/database-test.xml"
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job deploy < /vagrant/jenkinsjobs/deploy.xml"
 sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job func-test < /vagrant/jenkinsjobs/func-test.xml"
+sudo su jenkins -c "java -jar jenkins-cli.jar -s $url create-job sonar-test < /vagrant/jenkinsjobs/sonar-test.xml"
 
 # start compile-job
 echo "Starting compile job..."

@@ -10,7 +10,8 @@ Vagrant.configure("2") do |config|
 	end
 	config.vm.network :forwarded_port, guest: 80, host: 8080
 	config.vm.network :forwarded_port, guest: 4444, host: 4444
-	config.vm.network :forwarded_port, guest: 8181, host: 8181	
+	config.vm.network :forwarded_port, guest: 8181, host: 8181
+#	config.vm.network :forwarded_port, guest: 9000, host: 9000
 	config.vm.provision :puppet do |puppet|
 		puppet.options = "--verbose --debug"
 		puppet.manifests_path = "manifests"
@@ -26,5 +27,6 @@ Vagrant.configure("2") do |config|
 	end
 	config.vm.provision :shell, :path => "glassfish.sh"
 	config.vm.provision :shell, :path => "jenkinsconfig.sh"
-#	config.vm.provision :shell, :path => "dplab.sh"
+	config.vm.provision :shell, :path => "sonar.sh"
+	config.vm.provision :shell, :path => "dplab.sh"
 end

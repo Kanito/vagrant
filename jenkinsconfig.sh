@@ -39,7 +39,7 @@ wget http://updates.jenkins-ci.org/download/plugins/git-client/1.1.2/git-client.
 wget http://updates.jenkins-ci.org/download/plugins/greenballs/1.12/greenballs.hpi
 wget http://updates.jenkins-ci.org/download/plugins/jquery/1.7.2-1/jquery.hpi
 wget http://updates.jenkins-ci.org/download/plugins/parameterized-trigger/2.18/parameterized-trigger.hpi
-wget http://updates.jenkins-ci.org/download/plugins/selenium/2.2/selenium.hpi
+wget http://updates.jenkins-ci.org/download/plugins/selenium/2.3/selenium.hpi
 wget http://updates.jenkins-ci.org/download/plugins/sonar/2.1/sonar.hpi
 sudo su jenkins -c "cp /home/vagrant/jenkinsplugins/*.hpi /var/lib/jenkins/plugins/"
 
